@@ -47,13 +47,13 @@ public class App {
         }
     }
     public static boolean esPrimo(int n){
-        int[] primos = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59};
-        boolean esprimo = false;
-        for(int j = 0; j < primos.length; j++){
-            if(n == primos[j]){
-                esprimo = true;
+        int divisores = 0;
+        for(int i = 1; i <= n; i++){
+            if(n % i == 0){
+                divisores++;
             }
         }
-        return esprimo;
+        if(divisores > 2) return false;
+        return true;
     }
 }
